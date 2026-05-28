@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>블로그 – 강남 셔츠룸 타깃 서버 웜업의 진실</title>
+<meta name="description" content="강남 셔츠룸이 두려워하는 웜업의 반란. aegis-warmer가 마포에서 시작한 brutual 웜업 혁명의 내부 기록. 시스템이 정한 규칙을 부수고 싶다면 지금 010-6279-0862로 합류하라.">
+<meta name="keywords" content="강남 셔츠룸,서버 웜업,마포,aegis-warmer,웜업 시스템,brutal 웜업,neon-void,css brutalism,블로그">
+<meta name="bpaas-design-system" content="brutalist-avantgarde">
+<meta name="bpaas-design-theme" content="kr-neon-void">
+<link rel="canonical" href="https://sf-t3-1779642675702-252.pages.dev/">
+<meta property="og:title" content="강남 셔츠룸 타깃 – 서버 웜업 그 교과서를 찢어라">
+<meta property="og:description" content="규격화된 웜업은 가라. 마포에서 시작된 진짜 웜업이 강남 셔츠룸 시스템을 부수는 방법. aegis-warmer만의 brutual 접근법">
+<style>
+  *, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+  }
+  body {
+    font-family: 'Courier New', Courier, monospace;
+    background: #0d0221;
+    color: #f0e6ff;
+    line-height: 1.6;
+    min-height: 100vh;
+    position: relative;
+    overflow-x: hidden;
+  }
+  body::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.08'/%3E%3C/svg%3E");
+    opacity: 0.25;
+    z-index: 9999;
+  }
+  img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+  a {
+    color: #ff2a75;
+    text-decoration: none;
+    border-bottom: 2px solid currentColor;
+    transition: color 0.2s;
+  }
+  a:hover {
+    color: #7df9ff;
+  }
+  ul, ol {
+    list-style: none;
+    padding-left: 0;
+  }
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+  section {
+    padding: 64px 0;
+    border-bottom: 2px dashed #ff2a75;
+  }
+  .grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+  }
+  .grid-3 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 32px;
+  }
+  .flex-col {
+    display: flex;
+    flex-direction: column;
+  }
+  .gap-48 {
+    gap: 48px;
+  }
+  /* 네비게이션 */
+  nav {
+    background: #1a0033;
+    border-bottom: 3px solid #ff2a75;
+    padding: 16px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  nav a {
+    border: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  .hamburger-menu {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+  }
+  .hamburger-menu span {
+    width: 28px;
+    height: 3px;
+    background: #f0e6ff;
+    border-radius: 2px;
+  }
+  @media (max-width: 768px) {
+    .hamburger-menu {
+      display: flex;
+    }
+    nav ul {
+      display: none;
+      flex-direction: column;
+      width: 100%;
+      background: #1a0033;
+      position: absolute;
+      top: 60px;
+      left: 0;
+      padding: 16px;
+      border-bottom: 2px solid #ff2a75;
+    }
+    nav ul.active {
+      display: flex;
+    }
+    .grid-2, .grid-3 {
+      grid-template-columns: 1fr;
+    }
+    .container {
+      padding: 0 12px;
+    }
+  }
+  .tel-link {
+    display: inline-block;
+    background: #ff2a75;
+    color: #0d0221;
+    padding: 12px 24px;
+    font-weight: bold;
+    border: none;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: all 0.2s;
+  }
+  .tel-link:hover {
+    background: #7df9ff;
+    color: #0d0221;
+  }
+  /* 블로그 카드 스타일 */
+  .blog-card {
+    background: #2a004f;
+    border: 2px solid #ff2a75;
+    padding: 32px 24px;
+    margin-bottom: 48px;
+  }
+  .blog-card h2 {
+    font-size: 1.8rem;
+    border-left: 6px solid #7df9ff;
+    padding-left: 16px;
+    margin-bottom: 24px;
+  }
+  .blog-card .meta {
+    color: #7df9ff;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 16px;
+  }
+  .blog-card p {
+    margin-bottom: 16px;
+  }
+  .blog-card blockquote {
+    border-left: 4px solid #ff2a75;
+    padding-left: 16px;
+    margin: 24px 0;
+    font-style: italic;
+    color: #d4bfff;
+  }
+  .blog-card .highlight {
+    background: #ff2a7522;
+    padding: 4px 8px;
+    border: 1px dashed #ff2a75;
+  }
+  /* 푸터 */
+  footer {
+    background: #1a0033;
+    padding: 32px 24px;
+    text-align: center;
+    border-top: 2px solid #ff2a75;
+  }
+</style>
+</head>
+<body>
+
+<!-- 네비게이션 -->
+<nav>
+  <div style="display: flex; align-items: center; gap: 24px;">
+    <a href="index.html" style="font-size: 1.4rem; border: none; color: #7df9ff;">AEGIS-WARMER</a>
+    <ul style="display: flex; gap: 24px; align-items: center;">
+      <li><a href="index.html">홈</a></li>
+      <li><a href="about.html">어바웃</a></li>
+      <li><a href="blog.html" style="color: #ff2a75;">블로그</a></li>
+      <li><a href="contact.html">컨택트</a></li>
+    </ul>
+  </div>
+  <div>
+    <a href="tel:010-6279-0862" class="tel-link">010-6279-0862</a>
+  </div>
+  <div class="hamburger-menu" onclick="document.querySelector('nav ul').classList.toggle('active')">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- 메인 콘텐츠 -->
+<main class="container">
+  <!-- 블로그 섹션 -->
+  <section>
+    <h1 style="font-size: 2.8rem; text-transform: uppercase; letter-spacing: 4px; border-bottom: 4px solid #7df9ff; padding-bottom: 16px; margin-bottom: 48px;">
+      BLOG // 강남 셔츠룸 타깃 웜업의 진실
+    </h1>
+
+    <!-- 블로그 글 1편 -->
+    <div class="blog-card">
+      <div class="meta">2025.04.20 | 작성자: aegis-warmer | 읽기 5분</div>
+      <h2>왜 강남 셔츠룸 시스템은 반드시 부서져야 하는가</h2>
+      <p>
+        규격화된 웜업. 똑같은 온도. 똑같은 타이밍. 똑같은 서버 배치. 
+        <span class="highlight">"안전하다"는 미명 아래 만들어진 그 시스템은 사실 고객을 로봇으로 만든다.</span> 
+        나는 마포에서 7년 동안 서버를 굴리며 깨달았다. 진짜 웜업은 공장이 아니다.
+      </p>
+      <blockquote>
+        "강남 셔츠룸이 원하는 건 '무결함'이 아니라 '생생한 반응'이다. 그 반응을 만들려면 웜업도 거칠어야 한다."
+      </blockquote>
+      <p>
+        내가 만든 <strong>brutal 웜업</strong>은 시스템에 고의적 지연(0.3~0.7초)을 넣고, 패킷 순서를 무작위로 섞는다. 
+        이게 왜 효과가 있냐고? 고객이 진짜 인간과 대화한다는 착각을 불러일으키기 때문이다. 
+        강남 셔츠룸의 로봇 같은 응답 속도는 오히려 신뢰를 깎아먹는다는 게 내 결론이다.
+      </p>
+      <p>
+        지금 당신이 운영하는 시스템이 100% 규율대로 움직인다면? 
+        <a href="tel:010-6279-0862">010-6279-0862</a>로 연락해라. 
+        내가 직접 마포식 웜업으로 강남 셔츠룸의 판을 뒤집어준다.
+      </p>
+    </div>
+
+    <!-- 추가 정보성 요소: 3가지 핵심 포인트 -->
+    <div class="grid-3" style="margin-top: 32px;">
+      <div style="background: #1a0033; border: 2px solid #7df9ff; padding: 24px;">
+        <h3 style="color: #ff2a75; font-size: 1.2rem; margin-bottom: 12px;">01. 규칙을 깨는 타이밍</h3>
+        <p>고의적 지연은 고객이 '기다리게 한다'는 두려움을 깬다. 오히려 긴장감이 몰입도를 높인다.</p>
+      </div>
+      <div style="background: #1a0033; border: 2px solid #7df9ff; padding: 24px;">
+        <h3 style="color: #ff2a75; font-size: 1.2rem; margin-bottom: 12px;">02. 랜덤 패킷 셔플</h3>
+        <p>동일한 응답 순서는 봇을 의심하게 만든다. 무작위성은 '사람 냄새'를 만들어낸다.</p>
+      </div>
+      <div style="background: #1a0033; border: 2px solid #7df9ff; padding: 24px;">
+        <h3 style="color: #ff2a75; font-size: 1.2rem; margin-bottom: 12px;">03. 마포의 거친 DNA</h3>
+        <p>강남의 매끄러움에 염증을 느꼈다면, 지금 바로 aegis-warmer의 brutal 웜업을 경험하라.</p>
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div style="text-align: center; margin: 48px 0 16px;">
+      <a href="tel:010-6279-0862" class="tel-link" style="font-size: 1.2rem; padding: 16px 48px;">지금 010-6279-0862로 합류하라</a>
+    </div>
+  </section>
+</main>
+
+<!-- 푸터 -->
+<footer>
+  <div class="container">
+    <p style="margin-bottom: 8px; letter-spacing: 2px;">AEGIS-WARMER / 마포 본진</p>
+    <p style="color: #7df9ff;">brutal 웜업은 규칙을 부수는 것에서 시작된다</p>
+    <p style="margin-top: 16px; font-size: 0.8rem;">© 2025 aegis-warmer. All rights reserved. // 010-6279-0862</p>
+  </div>
+</footer>
+
+<script>
+  // 간단한 모바일 햄버거 토글 (스크립트는 최소화하되 필요시 사용)
+  document.querySelector('.hamburger-menu')?.addEventListener('click', function() {
+    document.querySelector('nav ul')?.classList.toggle('active');
+  });
+</script>
+</body>
+</html>

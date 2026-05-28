@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>마포 서버 웜업 – 강남 셔츠룸 타깃 정보</title>
+    <meta name="description" content="마포 출신 서버 웜업이 강남 셔츠룸을 뒤집는다. 규격화된 시스템에 반기 든 aegis-warmer의 거친 웜업, 지금 010-6279-0862로 합류하라.">
+    <meta name="keywords" content="강남 셔츠룸,서버 웜업,마포,aegis-warmer,웜업 시스템,brutal 웜업,neon-void,css brutalism">
+    <meta name="bpaas-design-system" content="brutalist-avantgarde">
+    <meta name="bpaas-design-theme" content="kr-neon-void">
+    <link rel="canonical" href="https://sf-t3-1779642675702-252.pages.dev/">
+    <!-- OG Meta -->
+    <meta property="og:title" content="강남 셔츠룸 – 서버 웜업의 규칙을 부수다">
+    <meta property="og:description" content="마포에서 시작된 웜업 혁명. 강남 셔츠룸 타깃">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://sf-t3-1779642675702-252.pages.dev/">
+    <meta property="og:image" content="https://sf-t3-1779642675702-252.pages.dev/og-image.jpg">
+    <meta property="og:locale" content="ko_KR">
+    
+    <style>
+        /* RESET & BASE */
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        html {
+            font-size: 16px;
+            scroll-behavior: smooth;
+            background-color: #0a0a0a;
+        }
+        body {
+            font-family: 'Courier New', 'IBM Plex Mono', 'Consolas', monospace;
+            color: #e0e0e0;
+            background: #0a0a0a;
+            min-height: 100vh;
+            line-height: 1.6;
+            position: relative;
+            overflow-x: hidden;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+        a {
+            color: #ff0066;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        a:hover {
+            color: #00ffcc;
+        }
+        ul, ol {
+            list-style: none;
+        }
+        /* CUSTOM TEXTURE – raw CSS noise overlay */
+        body::after {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 9999;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.05'/%3E%3C/svg%3E");
+            opacity: 0.08;
+        }
+        /* LAYOUT SYSTEM */
+        .container {
+            width: 100%;
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
+            position: relative;
+            z-index: 1;
+        }
+        section {
+            margin-bottom: 4rem;
+            border: 1px solid #2a2a2a;
+            padding: 2rem;
+            background: linear-gradient(145deg, #0f0f0f 0%, #111 100%);
+        }
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+        }
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+        }
+        .flex-col {
+            display: flex;
+            flex-direction: column;
+        }
+        .gap-48 {
+            gap: 3rem;
+        }
+        /* Typography */
+        h1 {
+            font-size: 3.5rem;
+            letter-spacing: -0.05em;
+            text-transform: uppercase;
+            line-height: 1;
+            color: #ff0066;
+            text-shadow: 0 0 10px rgba(255,0,102,0.3);
+            margin-bottom: 1rem;
+        }
+        h2 {
+            font-size: 2.2rem;
+            letter-spacing: -0.03em;
+            text-transform: uppercase;
+            color: #00ffcc;
+            border-bottom: 2px solid #ff0066;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+        h3 {
+            font-size: 1.4rem;
+            font-weight: normal;
+            color: #ff6600;
+            margin-bottom: 0.75rem;
+        }
+        p {
+            margin-bottom: 1.2rem;
+            font-size: 1rem;
+        }
+        .small {
+            font-size: 0.85rem;
+            color: #666;
+        }
+        .highlight {
+            color: #ff0066;
+            font-weight: bold;
+        }
+        /* Nav */
+        nav {
+            background: #0d0d0d;
+            border-bottom: 2px solid #ff0066;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .nav-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+        .nav-links a {
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: #e0e0e0;
+        }
+        .nav-links a:hover {
+            color: #ff0066;
+        }
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 5px;
+            background: none;
+            border: none;
+            padding: 0;
+        }
+        .hamburger span {
+            width: 28px;
+            height: 2px;
+            background: #e0e0e0;
+            transition: all 0.3s;
+        }
+        .tel-link {
+            display: inline-block;
+            background: #ff0066;
+            color: #0a0a0a !important;
+            padding: 0.5rem 1rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            border: none;
+            transition: all 0.2s;
+            font-size: 0.9rem;
+        }
+        .tel-link:hover {
+            background: #00ffcc;
+            color: #0a0a0a !important;
+        }
+        /* Card style */
+        .card {
+            background: #141414;
+            border: 1px solid #2a2a2a;
+            padding: 1.5rem;
+            transition: all 0.2s;
+        }
+        .card:hover {
+            border-color: #ff0066;
+            transform: translateY(-2px);
+        }
+        .card h3 {
+            color: #ff6600;
+        }
+        .card p {
+            color: #aaa;
+        }
+        /* FAQ */
+        .faq-item {
+            border-bottom: 1px solid #222;
+            padding: 1rem 0;
+        }
+        .faq-question {
+            font-weight: bold;
+            color: #00ffcc;
+        }
+        .faq-answer {
+            color: #bbb;
+            margin-top: 0.5rem;
+        }
+        /* Responsive 768 */
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+            section {
+                padding: 1.5rem 1rem;
+            }
+            h1 {
+                font-size: 2.2rem;
+            }
+            h2 {
+                font-size: 1.6rem;
+            }
+            .grid-2, .grid-3 {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: #0d0d0d;
+                padding: 1rem 1.5rem;
+                gap: 1rem;
+                border-bottom: 2px solid #ff0066;
+            }
+            .nav-links.active {
+                display: flex;
+            }
+            .hamburger {
+                display: flex;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Navigation -->
+<nav>
+    <div class="nav-inner">
+        <a href="/" style="font-size: 1.2rem; font-weight: bold; color: #ff0066; text-shadow: 0 0 5px rgba(255,0,102,0.5);">AEGIS-WARMER</a>
+        <button class="hamburger" aria-label="메뉴 열기">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <div class="nav-links">
+            <a href="/">홈</a>
+            <a href="/info.html">정보</a>
+            <a href="/service.html">서비스</a>
+            <a href="/contact.html">연락</a>
+            <a href="tel:010-6279-0862" class="tel-link">📞 전화 연결</a>
+        </div>
+    </div>
+</nav>
+
+<main class="container">
+
+    <!-- Hero Section -->
+    <section style="border: none; background: transparent; padding: 1rem 0;">
+        <h1>강남 셔츠룸<br>정보는 전장이다</h1>
+        <p style="font-size: 1.3rem; color: #ff6600; max-width: 800px;">
+            마포에서 기어나온 aegis-warmer의 브루탈 웜업. 규격화된 시스템은 압축된다. 
+            진짜 정보는 거리에서, 서버에서, 웜업의 핵에서 나온다.
+        </p>
+        <p style="margin-top: 1.5rem;">
+            <a href="tel:010-6279-0862" class="tel-link" style="font-size: 1.1rem;">010-6279-0862</a>
+        </p>
+    </section>
+
+    <!-- Core Info Grid -->
+    <section>
+        <h2>📍 마포 → 강남 웜업 루트</h2>
+        <div class="grid-2">
+            <div class="card">
+                <h3>서버 웜업이란?</h3>
+                <p>규격화된 셔츠룸 시스템에 침투하는 거친 프리웜업. aegis-warmer는 기존의 부드러운 웜업을 거부하고, 마포의 생생한 데이터로 강남 타깃을 압축한다.</p>
+            </div>
+            <div class="card">
+                <h3>왜 마포인가?</h3>
+                <p>강남의 화려한 시스템은 가짜다. 마포의 거친 공기, 빈티지한 서버, 브루탈한 인터페이스에서 진짜 웜업이 시작된다. 여기가 기점이다.</p>
+            </div>
+            <div class="card">
+                <h3>타깃: 강남 셔츠룸</h3>
+                <p>네온이 지배하는 그곳, 시스템에 갇힌 웜업. 우리는 규칙을 부수고, 프로토콜을 무시한다. 100% raw 웜업으로 재정의한다.</p>
+            </div>
+            <div class="card">
+                <h3>aegis-warmer 코드</h3>
+                <p>우리는 보호자가 아니다. 우리는 방패다. 시스템을 뚫고, 데이터를 왜곡하고, 새로운 차원의 웜업을 창조한다. 합류할 준비가 되었다면 전화해라.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Detailed Info + FAQ -->
+    <section>
+        <h2>⚡ 핵심 정보 — 시스템 해체</h2>
+        <div class="grid-2 gap-48" style="margin-bottom: 2rem;">
+            <div>
+                <h3>웜업 프로세스</h3>
+                <ul style="color: #aaa; list-style: square; padding-left: 1.5rem;">
+                    <li>마포 서버 스캔 — 0.3초</li>
+                    <li>강남 타깃 매핑 — 1.2초</li>
+                    <li>셔츠룸 프로파일 압축 — 0.8초</li>
+                    <li>브루탈 웜업 전송 — 실시간</li>
+                </ul>
+                <p style="margin-top: 1rem;">모든 단계는 암호화되며, 기존 시스템과 호환되지 않는다. 의도적이다.</p>
+            </div>
+            <div>
+                <h3>지역 시그널</h3>
+                <p>홍대입구에서 서초까지, 데이터는 흐른다. 우리는 마포의 낮은 지대에서 신호를 잡아 강남의 높은 타워로 쏜다. 역방향 웜업, 그게 방식이다.</p>
+                <p style="margin-top: 0.5rem;">신호 강도: 94.7% (강남 셔츠룸 타깃 기준)</p>
+            </div>
+        </div>
+
+        <h3>자주 묻는 질문 (시스템 무시)</h3>
+        <div class="faq-item">
+            <div class="faq-question">이게 합법적인 웜업인가?</div>
+            <div class="faq-answer">합법? 그런 건 시스템이 정한다. 우리는 aegis-warmer다. 규칙 밖에서 움직인다. 궁금하면 전화해라.</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">마포 출신만 가능한가?</div>
+            <div class="faq-answer">아니다. 하지만 마포의 웜업 DNA를 이해해야 한다. 강남 셔츠룸 시스템에 도전할 각오가 되었다면 누구든 합류할 수 있다. 단, 약한 마음은 금지.</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">서버 웜업 비용은?</div>
+            <div class="faq-answer">비용은 없다. 대신 너의 데이터를 걸어라. 우리는 시스템을 부수는 데에만 관심 있다. 결과물은 직접 확인해라.</div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section style="text-align: center; border: 2px solid #ff0066;">
+        <h2 style="border-bottom: none;">📞 지금 합류</h2>
+        <p style="font-size: 1.4rem; color: #ff6600; margin: 1rem 0;">
+            마포의 웜업이 강남을 뒤집는다. 규격화된 셔츠룸 시스템에 반기 들 준비가 되었다면, 이 번호로 전화해라.
+        </p>
+        <p style="font-size: 2rem; font-weight: bold; letter-spacing: 0.1em;">
+            <a href="tel:010-6279-0862" style="
+</body>
+</html>
