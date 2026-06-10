@@ -1,27 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://sf-t3-1779642675702-252.pages.dev/</loc>
-    <lastmod>2026-05-28</lastmod>
+    <loc>https://sarakinhceo-gif.github.io/bp-sf-t3-1779642675702-252/</loc>
+    <lastmod>2026-06-10</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://sf-t3-1779642675702-252.pages.dev/blog.html</loc>
-    <lastmod>2026-05-28</lastmod>
+    <loc>https://sarakinhceo-gif.github.io/bp-sf-t3-1779642675702-252/about.html</loc>
+    <lastmod>2026-06-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://sf-t3-1779642675702-252.pages.dev/about.html</loc>
-    <lastmod>2026-05-28</lastmod>
+    <loc>https://sarakinhceo-gif.github.io/bp-sf-t3-1779642675702-252/blog.html</loc>
+    <lastmod>2026-06-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://sf-t3-1779642675702-252.pages.dev/feed.xml</loc>
-    <lastmod>2026-05-28</lastmod>
-    <changefreq>daily</changefreq>
+    <loc>https://sarakinhceo-gif.github.io/bp-sf-t3-1779642675702-252/posts/compare-002-1nna0g6.html</loc>
+    <lastmod>2026-06-10</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://sarakinhceo-gif.github.io/bp-sf-t3-1779642675702-252/posts/qa-001-1nna0g6.html</loc>
+    <lastmod>2026-06-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://sarakinhceo-gif.github.io/bp-sf-t3-1779642675702-252/feed.xml</loc>
+    <lastmod>2026-06-10</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
   </url>
 </urlset>
