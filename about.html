@@ -1,271 +1,269 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>마포 서버 웜업 – 강남 셔츠룸 타깃 정보</title>
-    <meta name="description" content="마포 출신 서버 웜업이 강남 셔츠룸을 뒤집는다. 규격화된 시스템에 반기 든 aegis-warmer의 거친 웜업, 지금 010-6279-0862로 합류하라.">
-    <meta name="keywords" content="강남 셔츠룸,서버 웜업,마포,aegis-warmer,웜업 시스템,brutal 웜업,neon-void,css brutalism">
-    <meta name="bpaas-design-system" content="brutalist-avantgarde">
-    <meta name="bpaas-design-theme" content="kr-neon-void">
-    <link rel="canonical" href="https://sf-t3-1779642675702-252.maphoshirts.today/about.html">
-    <!-- OG Meta -->
-    <meta property="og:title" content="마포 서버 웜업 – 강남 셔츠룸 타깃 정보">
-    <meta property="og:description" content="마포 출신 서버 웜업이 강남 셔츠룸을 뒤집는다. 규격화된 시스템에 반기 든 aegis-warmer의 거친 웜업, 지금 010-6279-0862로 합류하라.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://sf-t3-1779642675702-252.maphoshirts.today/about.html">
-    <meta property="og:image" content="https://sf-t3-1779642675702-252.pages.dev/og-image.jpg">
-    <meta property="og:locale" content="ko_KR">
-    
-    <style>
-        /* RESET & BASE */
-        *, *::before, *::after {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        html {
-            font-size: 16px;
-            scroll-behavior: smooth;
-            background-color: #0a0a0a;
-        }
-        body {
-            font-family: 'Courier New', 'IBM Plex Mono', 'Consolas', monospace;
-            color: #e0e0e0;
-            background: #0a0a0a;
-            min-height: 100vh;
-            line-height: 1.6;
-            position: relative;
-            overflow-x: hidden;
-        }
-        img {
-            max-width: 100%;
-            height: auto;
-            display: block;
-        }
-        a {
-            color: #ff0066;
-            text-decoration: none;
-            transition: color 0.2s;
-        }
-        a:hover {
-            color: #00ffcc;
-        }
-        ul, ol {
-            list-style: none;
-        }
-        /* CUSTOM TEXTURE – raw CSS noise overlay */
-        body::after {
-            content: "";
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: 9999;
-            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.05'/%3E%3C/svg%3E");
-            opacity: 0.08;
-        }
-        /* LAYOUT SYSTEM */
-        .container {
-            width: 100%;
-            max-width: 1280px;
-            margin: 0 auto;
-            padding: 2rem 1.5rem;
-            position: relative;
-            z-index: 1;
-        }
-        section {
-            margin-bottom: 4rem;
-            border: 1px solid #2a2a2a;
-            padding: 2rem;
-            background: linear-gradient(145deg, #0f0f0f 0%, #111 100%);
-        }
-        .grid-2 {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 2rem;
-        }
-        .grid-3 {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1.5rem;
-        }
-        .flex-col {
-            display: flex;
-            flex-direction: column;
-        }
-        .gap-48 {
-            gap: 3rem;
-        }
-        /* Typography */
-        h1 {
-            font-size: 3.5rem;
-            letter-spacing: -0.05em;
-            text-transform: uppercase;
-            line-height: 1;
-            color: #ff0066;
-            text-shadow: 0 0 10px rgba(255,0,102,0.3);
-            margin-bottom: 1rem;
-        }
-        h2 {
-            font-size: 2.2rem;
-            letter-spacing: -0.03em;
-            text-transform: uppercase;
-            color: #00ffcc;
-            border-bottom: 2px solid #ff0066;
-            padding-bottom: 0.5rem;
-            margin-bottom: 1.5rem;
-        }
-        h3 {
-            font-size: 1.4rem;
-            font-weight: normal;
-            color: #ff6600;
-            margin-bottom: 0.75rem;
-        }
-        p {
-            margin-bottom: 1.2rem;
-            font-size: 1rem;
-        }
-        .small {
-            font-size: 0.85rem;
-            color: #666;
-        }
-        .highlight {
-            color: #ff0066;
-            font-weight: bold;
-        }
-        /* Nav */
-        nav {
-            background: #0d0d0d;
-            border-bottom: 2px solid #ff0066;
-            padding: 1rem 0;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-        .nav-inner {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            max-width: 1280px;
-            margin: 0 auto;
-            padding: 0 1.5rem;
-        }
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-            align-items: center;
-        }
-        .nav-links a {
-            font-size: 1rem;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            color: #e0e0e0;
-        }
-        .nav-links a:hover {
-            color: #ff0066;
-        }
-        .hamburger {
-            display: none;
-            flex-direction: column;
-            cursor: pointer;
-            gap: 5px;
-            background: none;
-            border: none;
-            padding: 0;
-        }
-        .hamburger span {
-            width: 28px;
-            height: 2px;
-            background: #e0e0e0;
-            transition: all 0.3s;
-        }
-        .tel-link {
-            display: inline-block;
-            background: #ff0066;
-            color: #0a0a0a !important;
-            padding: 0.5rem 1rem;
-            font-weight: bold;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            border: none;
-            transition: all 0.2s;
-            font-size: 0.9rem;
-        }
-        .tel-link:hover {
-            background: #00ffcc;
-            color: #0a0a0a !important;
-        }
-        /* Card style */
-        .card {
-            background: #141414;
-            border: 1px solid #2a2a2a;
-            padding: 1.5rem;
-            transition: all 0.2s;
-        }
-        .card:hover {
-            border-color: #ff0066;
-            transform: translateY(-2px);
-        }
-        .card h3 {
-            color: #ff6600;
-        }
-        .card p {
-            color: #aaa;
-        }
-        /* FAQ */
-        .faq-item {
-            border-bottom: 1px solid #222;
-            padding: 1rem 0;
-        }
-        .faq-question {
-            font-weight: bold;
-            color: #00ffcc;
-        }
-        .faq-answer {
-            color: #bbb;
-            margin-top: 0.5rem;
-        }
-        /* Responsive 768 */
-        @media (max-width: 768px) {
-            .container {
-                padding: 1rem;
-            }
-            section {
-                padding: 1.5rem 1rem;
-            }
-            h1 {
-                font-size: 2.2rem;
-            }
-            h2 {
-                font-size: 1.6rem;
-            }
-            .grid-2, .grid-3 {
-                grid-template-columns: 1fr;
-                gap: 1.5rem;
-            }
-            .nav-links {
-                display: none;
-                flex-direction: column;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                width: 100%;
-                background: #0d0d0d;
-                padding: 1rem 1.5rem;
-                gap: 1rem;
-                border-bottom: 2px solid #ff0066;
-            }
-            .nav-links.active {
-                display: flex;
-            }
-            .hamburger {
-                display: flex;
-            }
-        }
-    </style>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>마포 서버 웜업 – 강남 셔츠룸 타깃 정보</title>
+ <meta name="description" content="마포 출신 서버 웜업이 강남 셔츠룸을 뒤집는다.">
+ <meta name="keywords" content="강남 셔츠룸,서버 웜업,마포,aegis-warmer,웜업 시스템,brutal 웜업,neon-void,css brutalism">
+ <link rel="canonical" href="https://sf-t3-1779642675702-252.maphoshirts.today/about.html">
+ <!-- OG Meta -->
+ <meta property="og:title" content="마포 서버 웜업 – 강남 셔츠룸 타깃 정보">
+ <meta property="og:description" content="마포 출신 서버 웜업이 강남 셔츠룸을 뒤집는다.">
+ <meta property="og:type" content="website">
+ <meta property="og:url" content="https://sf-t3-1779642675702-252.maphoshirts.today/about.html">
+ <meta property="og:image" content="https://sf-t3-1779642675702-252.pages.dev/og-image.jpg">
+ <meta property="og:locale" content="ko_KR">
+ 
+ <style>
+ /* RESET & BASE */
+ *, *::before, *::after {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+ }
+ html {
+ font-size: 16px;
+ scroll-behavior: smooth;
+ background-color: #0a0a0a;
+ }
+ body {
+ font-family: 'Courier New', 'IBM Plex Mono', 'Consolas', monospace;
+ color: #e0e0e0;
+ background: #0a0a0a;
+ min-height: 100vh;
+ line-height: 1.6;
+ position: relative;
+ overflow-x: hidden;
+ }
+ img {
+ max-width: 100%;
+ height: auto;
+ display: block;
+ }
+ a {
+ color: #ff0066;
+ text-decoration: none;
+ transition: color 0.2s;
+ }
+ a:hover {
+ color: #00ffcc;
+ }
+ ul, ol {
+ list-style: none;
+ }
+ /* CUSTOM TEXTURE – raw CSS noise overlay */
+ body::after {
+ content: "";
+ position: fixed;
+ top: 0;
+ left: 0;
+ width: 100%;
+ height: 100%;
+ pointer-events: none;
+ z-index: 9999;
+ background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.05'/%3E%3C/svg%3E");
+ opacity: 0.08;
+ }
+ /* LAYOUT SYSTEM */
+ .container {
+ width: 100%;
+ max-width: 1280px;
+ margin: 0 auto;
+ padding: 2rem 1.5rem;
+ position: relative;
+ z-index: 1;
+ }
+ section {
+ margin-bottom: 4rem;
+ border: 1px solid #2a2a2a;
+ padding: 2rem;
+ background: linear-gradient(145deg, #0f0f0f 0%, #111 100%);
+ }
+ .grid-2 {
+ display: grid;
+ grid-template-columns: repeat(2, 1fr);
+ gap: 2rem;
+ }
+ .grid-3 {
+ display: grid;
+ grid-template-columns: repeat(3, 1fr);
+ gap: 1.5rem;
+ }
+ .flex-col {
+ display: flex;
+ flex-direction: column;
+ }
+ .gap-48 {
+ gap: 3rem;
+ }
+ /* Typography */
+ h1 {
+ font-size: 3.5rem;
+ letter-spacing: -0.05em;
+ text-transform: uppercase;
+ line-height: 1;
+ color: #ff0066;
+ text-shadow: 0 0 10px rgba(255,0,102,0.3);
+ margin-bottom: 1rem;
+ }
+ h2 {
+ font-size: 2.2rem;
+ letter-spacing: -0.03em;
+ text-transform: uppercase;
+ color: #00ffcc;
+ border-bottom: 2px solid #ff0066;
+ padding-bottom: 0.5rem;
+ margin-bottom: 1.5rem;
+ }
+ h3 {
+ font-size: 1.4rem;
+ font-weight: normal;
+ color: #ff6600;
+ margin-bottom: 0.75rem;
+ }
+ p {
+ margin-bottom: 1.2rem;
+ font-size: 1rem;
+ }
+ .small {
+ font-size: 0.85rem;
+ color: #666;
+ }
+ .highlight {
+ color: #ff0066;
+ font-weight: bold;
+ }
+ /* Nav */
+ nav {
+ background: #0d0d0d;
+ border-bottom: 2px solid #ff0066;
+ padding: 1rem 0;
+ position: sticky;
+ top: 0;
+ z-index: 100;
+ }
+ .nav-inner {
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ max-width: 1280px;
+ margin: 0 auto;
+ padding: 0 1.5rem;
+ }
+ .nav-links {
+ display: flex;
+ gap: 2rem;
+ align-items: center;
+ }
+ .nav-links a {
+ font-size: 1rem;
+ text-transform: uppercase;
+ letter-spacing: 0.1em;
+ color: #e0e0e0;
+ }
+ .nav-links a:hover {
+ color: #ff0066;
+ }
+ .hamburger {
+ display: none;
+ flex-direction: column;
+ cursor: pointer;
+ gap: 5px;
+ background: none;
+ border: none;
+ padding: 0;
+ }
+ .hamburger span {
+ width: 28px;
+ height: 2px;
+ background: #e0e0e0;
+ transition: all 0.3s;
+ }
+ .tel-link {
+ display: inline-block;
+ background: #ff0066;
+ color: #0a0a0a !important;
+ padding: 0.5rem 1rem;
+ font-weight: bold;
+ text-transform: uppercase;
+ letter-spacing: 0.05em;
+ border: none;
+ transition: all 0.2s;
+ font-size: 0.9rem;
+ }
+ .tel-link:hover {
+ background: #00ffcc;
+ color: #0a0a0a !important;
+ }
+ /* Card style */
+ .card {
+ background: #141414;
+ border: 1px solid #2a2a2a;
+ padding: 1.5rem;
+ transition: all 0.2s;
+ }
+ .card:hover {
+ border-color: #ff0066;
+ transform: translateY(-2px);
+ }
+ .card h3 {
+ color: #ff6600;
+ }
+ .card p {
+ color: #aaa;
+ }
+ /* FAQ */
+ .faq-item {
+ border-bottom: 1px solid #222;
+ padding: 1rem 0;
+ }
+ .faq-question {
+ font-weight: bold;
+ color: #00ffcc;
+ }
+ .faq-answer {
+ color: #bbb;
+ margin-top: 0.5rem;
+ }
+ /* Responsive 768 */
+ @media (max-width: 768px) {
+ .container {
+ padding: 1rem;
+ }
+ section {
+ padding: 1.5rem 1rem;
+ }
+ h1 {
+ font-size: 2.2rem;
+ }
+ h2 {
+ font-size: 1.6rem;
+ }
+ .grid-2, .grid-3 {
+ grid-template-columns: 1fr;
+ gap: 1.5rem;
+ }
+ .nav-links {
+ display: none;
+ flex-direction: column;
+ position: absolute;
+ top: 100%;
+ left: 0;
+ width: 100%;
+ background: #0d0d0d;
+ padding: 1rem 1.5rem;
+ gap: 1rem;
+ border-bottom: 2px solid #ff0066;
+ }
+ .nav-links.active {
+ display: flex;
+ }
+ .hamburger {
+ display: flex;
+ }
+ }
+ </style>
   <meta name="twitter:card" content="summary">
 </head>
 <body>
@@ -329,7 +327,7 @@
 <section class="highlight">
 <h2>문의</h2>
 <p>추가로 확인하고 싶은 사항은 아래 연락처로 문의할 수 있습니다.</p>
-<p class="tel-link"><a href="tel:010-6279-0862">010-6279-0862</a></p>
+
 </section>
 </main>
 
